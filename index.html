@@ -1,438 +1,525 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Training Programming</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Programming</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+*{ 
+    margin: 0;
+    padding: 0;
+}  
 
-    :root {
-      --accent-color: #ff4800;
-      --secondary-color: #6a11cb;
-      --text-color: #333;
-      --card-bg: #ffffff;
-    }
 
-    body {
-      background-image: linear-gradient(45deg, rgb(240, 224, 49), rgba(19, 235, 231, 0.945));
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      width: 100%;
-      height: 100%;
-      color: var(--text-color);
-    }
+body {
+    background-image: linear-gradient(45deg,rgb(240, 224, 49),rgba(19, 235, 231, 0.945));
+    width: 100%;
+    height: 100vh;
+}
 
-    /* ===== NAVBAR ===== */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 10%;
-      background: rgba(255, 255, 255, 0.2);
-    }
 
-    .navbar a {
-      text-decoration: none;
-      color: blue;
-      font-size: 24px;
-      font-weight: 600;
-    }
+.navbar {
 
-    .navlinks {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
+ /* width: 100; */
+ height: 20px;
+ display: flex;
+ justify-content: space-between;
+ padding: 20px;
+ /* background-color: aqua; */
+ align-items: center;
 
-    .navlinks a {
-      text-decoration: none;
-      color: white;
-      font-size: 18px;
-      transition: color 0.3s ease;
-    }
+}
 
-    .navlinks a:hover {
-      color: var(--accent-color);
-    }
+.navbar a {
+    text-decoration: none;
+    color: blue;
+    align-items: center;
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-    .btn button {
-      background: white;
-      border: none;
-      border-radius: 8px;
-      padding: 6px 12px;
-      margin-left: 10px;
-      cursor: pointer;
-    }
 
-    .btn a {
-      text-decoration: none;
-      color: black;
-      font-weight: 600;
-    }
+.navlinks {
+  /* text-decoration: none; */
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
 
-    /* ===== HERO SECTION ===== */
-    .container {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 10%;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
 
-    .leftside {
-      width: 45%;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
 
-    .headingtext h1 {
-      font-family: cursive;
-      font-weight: 700;
-      font-size: 40px;
-      color: rgb(255, 72, 0);
-    }
+.navlinks a {
+    text-decoration: none;
+    color: dark pink(255, 255, 255);
+    font-size: 30px;
+    font-family: cursive;
+    align-items: center;
+    display: flex;
+}
 
-    .headingpara {
-      color: white;
-      font-size: 18px;
-      line-height: 1.6;
-    }
+.nav {
+    width: 70px;
+    height: 30px;
+    border-radius: 10px;
+}
 
-    .rightside img {
-      max-width: 100%;
-      height: auto;
-    }
+.nav a{
+    font-size: 10px;
+    color: black;
+}
 
-    /* ===== ABOUT SECTION ===== */
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.leftside {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+    width: 50%;
+}
+
+.headingtext {
+    font-family: cursive;
+    font-weight: 700;
+    font-size: 30px;
+    color: rgb(255, 72, 0);
+}
+
+.headingpara {
+    color: rgb(255, 255, 255);
+}
+
+.right-section {
+    align-items: center;
+    display: flex;
+}
+ 
+ .about-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 10%;
+    gap: 40px;
+  }
+
+  .about-left, .about-right {
+    flex: 1 1 400px;
+  }
+
+  .about-left h1 {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+  }
+
+  .about-left p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+  }
+
+  .about-left code {
+    background: var(--secondary-color);
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #fff;
+  }
+
+  .about-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 250px;
+    border: 2px dashed var(--secondary-color);
+    border-radius: 10px;
+  }
+
+  .about-right::before {
+    content: "Your Image Here 👋";
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    font-style: italic;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
     .about-section {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      padding: 60px 10%;
-      gap: 40px;
-      background: white;
-    }
-
-    .about-left, .about-right {
-      flex: 1 1 400px;
-    }
-
-    .about-left h1 {
-      font-size: 2.6rem;
-      color: var(--accent-color);
-      margin-bottom: 15px;
-    }
-
-    .about-left p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-    }
-
-    .about-left code {
-      background: var(--secondary-color);
-      padding: 4px 8px;
-      border-radius: 4px;
-      color: #fff;
+      flex-direction: column;
+      text-align: center;
     }
 
     .about-right {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 250px;
-      border: 2px dashed var(--secondary-color);
-      border-radius: 10px;
+      width: 80%;
+      margin-top: 20px;
     }
+  } 
+  .about-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 10%;
+    gap: 40px;
+  }
 
-    .about-right::before {
-      content: "Your Image Here 👋";
-      color: var(--secondary-color);
-      font-size: 1.1rem;
-      font-style: italic;
-    }
+  .about-left, .about-right {
+    flex: 1 1 400px;
+  }
 
-    /* ===== SERVICES SECTION ===== */
-    .service-section {
-      padding: 80px 10%;
+  .about-left h1 {
+    font-size: 2.6rem;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+  }
+
+  .about-left p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+  }
+
+  .about-left code {
+    background: var(--secondary-color);
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #fff;
+  }
+
+  .about-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 250px;
+    border: 2px dashed var(--secondary-color);
+    border-radius: 10px;
+  }
+
+  .about-right::before {
+    content:url(https://t3.ftcdn.net/jpg/00/26/85/62/360_F_26856292_vUmJtn8lxBnNP8TEQyJcmrxgNDkcg5oS.jpg);
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    font-style: italic;
+  }
+
+  /* ===== SERVICE SECTION ===== */
+  .service-section {
+    padding: 80px 10%;
+    text-align: center;
+    background: linear-gradient(45deg,rgb(49, 240, 148),rgba(152, 19, 235, 0.945));
+    width: 100%;
+  }
+
+  .service-section h2 {
+    color: var(--accent-color);
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    position: relative;
+  }
+
+  .service-section h2::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background: var(--secondary-color);
+    display: block;
+    margin: 10px auto;
+    border-radius: 2px;
+  }
+
+  .service-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+
+  .service-card {
+    background-color: var(--card-bg);
+    border: 2px solid var(--secondary-color);
+    border-radius: 15px;
+    width: 280px;
+    padding: 30px 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(255, 0, 30, 0.967);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 0 25px rgba(255, 0, 153, 0.968);
+    border-color: var(--accent-color);
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 0, 225, 0.668) 10%, transparent 70%);
+    transform: scale(0);
+    transition: 0.5s;
+  }
+
+  .service-card:hover::before {
+    transform: scale(1);
+  }
+
+  .service-icon {
+    font-size: 40px;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+  }
+
+  .service-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+  }
+
+  .service-card p {
+    font-size: 1rem;
+    color: #a9b3c1;
+    line-height: 1.6;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .about-section {
+      flex-direction: column;
       text-align: center;
-      background: linear-gradient(45deg, rgb(49, 240, 148), rgba(152, 19, 235, 0.945));
-      width: 100%;
     }
 
-    .service-section h2 {
-      color: white;
-      font-size: 2.5rem;
-      margin-bottom: 50px;
-      position: relative;
-    }
-
-    .service-section h2::after {
-      content: '';
-      width: 80px;
-      height: 4px;
-      background: white;
-      display: block;
-      margin: 10px auto;
-      border-radius: 2px;
+    .about-right {
+      width: 80%;
+      margin-top: 20px;
     }
 
     .service-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
     }
+  }
 
-    .service-card {
-      background-color: var(--card-bg);
-      border: 2px solid var(--secondary-color);
-      border-radius: 15px;
-      width: 280px;
-      padding: 30px 20px;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 15px rgba(255, 0, 30, 0.3);
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .service-card:hover {
-      transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 0 25px rgba(255, 0, 153, 0.5);
-      border-color: var(--accent-color);
-    }
-
-    .service-icon {
-      font-size: 40px;
-      color: var(--accent-color);
-      margin-bottom: 20px;
-    }
-
-    .service-card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 10px;
-      color: var(--text-color);
-    }
-
-    .service-card p {
-      font-size: 1rem;
-      color: #555;
-      line-height: 1.6;
-    }
-
-    /* ===== CONTACT SECTION ===== */
     .contact-section {
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      width: 90%;
-      max-width: 900px;
-      margin: 80px auto;
-      display: flex;
-      flex-wrap: wrap;
-      animation: fadeIn 1s ease-in-out;
-    }
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    animation: fadeIn 1s ease-in-out;
+  }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  .contact-image {
+    flex: 1 1 45%;
+    background: url('img.png.1.jpg') center/cover no-repeat;
+    min-height: 300px;
+  }
+
+  .contact-form {
+    flex: 1 1 55%;
+    padding: 40px;
+  }
+
+  .contact-form h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #333;
+    text-align: center;
+  }
+
+  .contact-form p {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #555;
+  }
+
+  .contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .contact-form input, 
+  .contact-form textarea {
+    padding: 12px 15px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    resize: none;
+  }
+
+  .contact-form input:focus, 
+  .contact-form textarea:focus {
+    border-color: #6a11cb;
+    box-shadow: 0 0 10px rgba(106,17,203,0.2);
+    outline: none;
+  }
+
+  .contact-form button {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    border: none;
+    padding: 14px;
+    font-size: 1.1em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background0.3s ease;
+  }
+
+  .contact-form button:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+  }
+
+  @media (max-width: 768px) {
+    .contact-section {
+      flex-direction: column;
+      text-align: center;
     }
 
     .contact-image {
-      flex: 1 1 45%;
-      background: url('img.png.1-removebg-preview.png') center/cover no-repeat;
-      min-height: 300px;
+      height: 250px;
     }
 
     .contact-form {
-      flex: 1 1 55%;
-      padding: 40px;
+      padding: 30px 20px;
     }
+  }
 
-    .contact-form h2 {
-      font-size: 2em;
-      margin-bottom: 15px;
-      color: #333;
-      text-align: center;
-    }
 
-    .contact-form p {
-      text-align: center;
-      margin-bottom: 25px;
-      color: #555;
-    }
+</style>
 
-    .contact-form form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      padding: 12px 15px;
-      border: 2px solid #eee;
-      border-radius: 10px;
-      font-size: 1em;
-      transition: all 0.3s ease;
-      resize: none;
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      border-color: #6a11cb;
-      box-shadow: 0 0 10px rgba(106, 17, 203, 0.2);
-      outline: none;
-    }
-
-    .contact-form button {
-      background: linear-gradient(135deg, #6a11cb, #2575fc);
-      color: #fff;
-      border: none;
-      padding: 14px;
-      font-size: 1.1em;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: transform 0.3s ease, background 0.3s ease;
-    }
-
-    .contact-form button:hover {
-      transform: translateY(-3px);
-      background: linear-gradient(135deg, #2575fc, #6a11cb);
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .about-section,
-      .contact-section {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .rightside img {
-        width: 80%;
-      }
-
-      .contact-image {
-        height: 250px;
-      }
-
-      .contact-form {
-        padding: 30px 20px;
-      }
-    }
-  </style>
 </head>
+ <body>
+    <nav class="navbar">
+<a href="http://">
+logo
+</a>
+    
+<ul class="navlinks">
+<li><a href="index.html">Home</a></li>
+<li><a href="#contact">contact Us</a></li>
+<li><a href="#About">About Us</a></li>
+<li><a href="#Services">Services</a></li>
+</ul>
+<div class="btn">
+    <button class="nav"><a href="sign in.html">SIGN-IN</a></button>
+    <button class="nav"><a href="log in.html">LOG-IN</a></button>
+<div>
 
-<body>
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <a href="#">Logo</a>
-    <ul class="navlinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#contact">Contact Us</a></li>
-      <li><a href="#About">About Us</a></li>
-      <li><a href="#Services">Services</a></li>
-    </ul>
-    <div class="btn">
-      <button class="nav"><a href="sign in.html">SIGN IN</a></button>
-      <button class="nav"><a href="log in.html">LOG IN</a></button>
-    </div>
   </nav>
 
-  <!-- HERO SECTION -->
-  <div class="container">
-    <div class="leftside">
-      <div class="headingtext">
-        <h1>Hello World</h1>
-      </div>
-      <div class="headingpara">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium autem libero distinctio harum ex recusandae fugiat quos ipsam.</p>
-      </div>
-    </div>
+<div class="container">
 
-    <div class="rightside">
-      <img src="img.png.1-removebg-preview.png" alt="Hero Image" />
+<div class="leftside">
+    <div class="headingtext">
+         <h1>Hello world</h1>
     </div>
+    <div class="headingpara">
+       <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id ducimus, laudantium autem libero distinctio harum ex recusandae fugiat quos ipsam, doloremque ea aut necessitatibus cumque eos ad ipsa quisquam voluptate!</p>
+   </div>
+
+</div>
+
+<div class="rightside">
+   <img src="img.png.1-removebg-preview.png" alt="">
+</div>  
+</div>     
+<section class="about-section" id="About">
+  <div class="about-left">
+    <h1>Hello, World! 👋</h1>
+    <p>
+      I'm Shweta kumari, a passionate web developer who loves turning ideas into interactive experiences.
+      I enjoy crafting clean, responsive, and visually appealing web pages. My favorite way to start a project is with a simple
+      <code>console.log("Hello, World!");</code> — a small line that starts big things!
+    </p>
+    <p>
+      Outside of coding, I love learning new technologies, exploring design trends, and creating meaningful digital experiences.
+    </p>
   </div>
 
-  <!-- ABOUT SECTION -->
-  <section class="about-section" id="About">
-    <div class="about-left">
-      <h1>Hello, World! 👋</h1>
-      <p>
-        I'm Shweta Kumari, a passionate web developer who loves turning ideas into interactive experiences.
-        My favorite way to start a project is with a simple
-        <code>console.log("Hello, World!");</code>
-      </p>
-      <p>Outside of coding, I love learning new technologies and creating meaningful digital experiences.</p>
-      
-    </div>
+  <div class="about-right">
+    
+  </div>
 
-    <div class="about-right"></div>
-    <img src="https://t3.ftcdn.net/jpg/00/26/85/62/360_F_26856292_vUmJtn8lxBnNP8TEQyJcmrxgNDkcg5oS.jpg" alt="">
-  </section>
-
-  <!-- SERVICES SECTION -->
-  <section class="service-section" id="Services">
-    <h2>My Services 💡</h2>
-    <div class="service-container">
-      <div class="service-card">
-        <div class="service-icon">💻</div>
-        <h3>Web Development</h3>
-        <p>Modern, responsive websites using clean code and creative designs that perform beautifully on every device.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🎨</div>
-        <h3>UI / UX Design</h3>
-        <p>Crafting interfaces that are visually stunning and intuitive for users.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">⚡</div>
-        <h3>Performance Optimization</h3>
-        <p>Speed and smoothness matter! I fine-tune websites for fast loading and seamless interactions.</p>
-      </div>
+<!-- ===== SERVICES SECTION ===== -->
+<section class="service-section" id="Services">
+  <h2>My Services 💡</h2>
+  <div class="service-container">
+    <div class="service-card">
+      <div class="service-icon">💻</div>
+      <h3>Web Development</h3>
+      <p>Modern, responsive websites using clean code and creative designs that perform beautifully on every device.</p>
     </div>
-  </section>
-
-  <!-- CONTACT SECTION -->
-  <section class="contact-section" id="contact">
-    <div class="contact-image"></div>
-    <div class="contact-form">
-      <h2>Get in Touch</h2>
-      <p>We’d love to hear from you! Fill out the form below to connect.</p>
-      <form>
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <input type="text" placeholder="Subject" required />
-        <textarea rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+    <div class="service-card">
+      <div class="service-icon">🎨</div>
+      <h3>UI / UX Design</h3>
+      <p>Crafting interfaces that are not only visually stunning but also intuitive, ensuring an engaging user experience.</p>
     </div>
-  </section>
+    <div class="service-card">
+      <div class="service-icon">⚡</div>
+      <h3>Performance Optimization</h3>
+      <p>Speed and smoothness matter! I fine-tune websites for fast loading and seamless interactions.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section" id="contact">
+  <div class="contact-image"></div>
+  <div class="contact-form">
+    <h2>Get in Touch</h2>
+    <p>We’d love to hear from you! Fill out the form below to connect.</p>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <input type="text" placeholder="Subject" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+
+
+  
+  
+
+</head>
+<body>
+
+
 </body>
 </html>
 
 
 
+
+
+  
+
+
+
+    
+</body>
+
+</html>
+  
